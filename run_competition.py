@@ -9,10 +9,11 @@ def main():
     parser.add_argument("--results", default="results")
     args = parser.parse_args()
 
-    result_files = glob.glob(os.path.join(args.results, "*"))
+    result_files = sorted(glob.glob(os.path.join(args.results, "*")))
 
     valid_results = []
     invalid_results = []
+    csv_teams = set()
 
     for result_path in result_files:
         if result_path.endswith(".invalid"):
@@ -23,6 +24,7 @@ def main():
 
         elif result_path.endswith(".csv"):
             team = os.path.basename(result_path).replace(".csv", "")
+            csv_teams.add(team)
             with open(result_path) as f:
                 for row in csv.DictReader(f):
                     valid_results.append({
@@ -45,7 +47,7 @@ def main():
         totals[team]["score"] = (totals[team]["raw_total"] / possible) if possible > 0 else 0
 
     # everything below runs ONCE, after both loops above finish
-    ranked = sorted(totals.items(), key=lambda x: x[1]["score"], reverse=True)
+    ranked = sorted(totals.items(), key=lambda x: (-x[1]["score"], x[0]))
 
     print("LEADERBOARD:")
     for rank, (team, data) in enumerate(ranked):
@@ -56,7 +58,12 @@ def main():
         for invalid in invalid_results:
             print(f"{invalid['team']}: {invalid['error']}")
 
+    no_graded_cases = sorted(csv_teams - set(totals.keys()))
+    if no_graded_cases:
+        print("\nNO GRADED CASES (submitted, but nothing counted toward a score):")
+        for team in no_graded_cases:
+            print(team)
+
 
 if __name__ == "__main__":
     main()
-
