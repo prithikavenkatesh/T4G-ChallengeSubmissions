@@ -57,11 +57,6 @@ def score_case(case, skill):
     if grader is None:
         raise ValueError(f"no grader registered for category '{case.get('category')}'")
 
-    # Building the prompt is deterministic (case + skill only) so a failure
-    # here (e.g. a missing placeholder) will fail identically every trial —
-    # raise once instead of burning retries on it. Only the network call
-    # itself gets per-trial tolerance, since that's where transient
-    # failures (timeouts, rate limits) actually happen.
     prompt = grader.build_prompt(case, skill["instructions"])
 
     trials = case.get("trials", 1)
