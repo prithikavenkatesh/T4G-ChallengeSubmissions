@@ -1,0 +1,15 @@
+{
+  "name": "t4g-leaderboard-benchmark",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local benchmark runner: test your skill.md against a challenge's practice cases before submitting officially.",
+  "bin": {
+    "t4g-benchmark": "./bin/benchmark.js"
+  },
+  "scripts": {
+    "benchmark": "node ./bin/benchmark.js"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
