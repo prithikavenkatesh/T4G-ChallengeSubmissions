@@ -1,10 +1,12 @@
 import argparse
 import csv
 import glob
+import hashlib
 import os
 
 import yaml
 
+import graders
 from constants import DEFAULT_CASE_POINTS, DIFFICULTY_POINTS, MODEL, REQUIRED_SKILL_FIELDS, client
 from graders import GRADERS
 
@@ -30,14 +32,15 @@ def validate_skill(skill):
     return True, None
 
 
-def load_cases(cases_path):
+def discover_case_files(cases_path):
     if os.path.isfile(cases_path):
-        case_files = [cases_path]
-    else:
-        case_files = sorted(glob.glob(os.path.join(cases_path, "*.yaml")))
+        return [cases_path]
+    return sorted(glob.glob(os.path.join(cases_path, "*.yaml")))
 
+
+def load_cases(cases_path):
     cases = []
-    for case_file in case_files:
+    for case_file in discover_case_files(cases_path):
         with open(case_file, "r") as f:
             case = yaml.safe_load(f)
         if not case:
@@ -45,6 +48,26 @@ def load_cases(cases_path):
             continue
         cases.append(case)
     return cases
+
+
+def graders_fingerprint():
+    hasher = hashlib.sha256()
+    graders_dir = os.path.dirname(graders.__file__)
+    for path in sorted(glob.glob(os.path.join(graders_dir, "*.py"))):
+        with open(path, "rb") as f:
+            hasher.update(f.read())
+    return hasher.hexdigest()
+
+
+def compute_state_hash(skill_path, cases_path):
+    hasher = hashlib.sha256()
+    with open(skill_path, "rb") as f:
+        hasher.update(f.read())
+    for case_file in discover_case_files(cases_path):
+        with open(case_file, "rb") as f:
+            hasher.update(f.read())
+    hasher.update(graders_fingerprint().encode())
+    return hasher.hexdigest()
 
 
 def call_model(prompt):
@@ -78,19 +101,38 @@ def score_case(case, skill):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--skill", required=True)
-    parser.add_argument("--cases", default="cases")
+    parser.add_argument("--cases", required=True)
     parser.add_argument("--out", default="results")
+    parser.add_argument(
+        "--force", action="store_true",
+        help="Re-grade even if the skill, cases, and grader code are unchanged since the last run",
+    )
     args = parser.parse_args()
 
     skill = load_skill(args.skill)
+    state_hash = compute_state_hash(args.skill, args.cases)
+    hash_path = os.path.join(args.out, f"{skill['team_name']}.hash")
+
+    if not args.force and os.path.exists(hash_path):
+        with open(hash_path) as f:
+            if f.read().strip() == state_hash:
+                print(f"No change to skill/cases/grading code for {skill['team_name']}, skipping (use --force to re-grade)")
+                return
+
+    os.makedirs(args.out, exist_ok=True)
+
+    def save_hash():
+        with open(hash_path, "w") as f:
+            f.write(state_hash)
+
     is_valid, error = validate_skill(skill)
 
     if not is_valid:
-        os.makedirs(args.out, exist_ok=True)
         invalid_path = os.path.join(args.out, f"{skill['team_name']}.invalid")
         with open(invalid_path, "w") as f:
             f.write(error)
         print(f"Skill validation failed: {error}")
+        save_hash()
         return
 
     cases = load_cases(args.cases)
@@ -117,14 +159,13 @@ def main():
             "response": best_response,
         })
 
-    os.makedirs(args.out, exist_ok=True)
-
     output_path = os.path.join(args.out, f"{skill['team_name']}.csv")
     with open(output_path, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=["case_id", "score", "max_points", "response"])
         writer.writeheader()
         writer.writerows(rows)
 
+    save_hash()
     print(f"Wrote {len(rows)} rows to {output_path}")
 
 
