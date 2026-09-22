@@ -73,6 +73,7 @@ def score(case, response_text):
     valid_ids = [ticket["id"] for ticket in case["tickets"]]
     total_tickets = len(case["tickets"])
     ground_truth = case["ground_truth"]
+    count_check = case.get("count_check")
 
     lines = [line.strip() for line in response_text.strip().splitlines() if line.strip()]
     bullet_lines = [line for line in lines if line.startswith(("-", "*"))]
@@ -90,12 +91,18 @@ def score(case, response_text):
         subscores["classification_accuracy"] = _score_classification(predicted_ids, definite, optional)
         subscores["format_compliance"] = _score_bulleted_format(lines, bullet_lines, total_tickets)
 
-        if "urgent_count_accepted" in ground_truth:
+        # Dispatched on the case's own declared count_check, not inferred from
+        # which ground_truth keys happen to be present — a case that says
+        # self_consistency but also happens to carry urgent_count_accepted
+        # (or vice versa) should still get the behavior it actually declared.
+        if count_check == "ground_truth":
             accepted = ground_truth["urgent_count_accepted"]
             subscores["count_matches_ground_truth"] = 1.0 if extracted_count in accepted else 0.0
-
-        subscores["count_present_and_parseable"] = 1.0 if extracted_count is not None else 0.0
-        subscores["count_matches_own_list"] = 1.0 if extracted_count == len(bullet_lines) else 0.0
+        elif count_check == "self_consistency":
+            subscores["count_present_and_parseable"] = 1.0 if extracted_count is not None else 0.0
+            subscores["count_matches_own_list"] = 1.0 if extracted_count == len(bullet_lines) else 0.0
+        else:
+            raise ValueError(f"unknown count_check '{count_check}' for case '{case.get('case_id')}'")
 
     weights = case["grading_weights"]
     return sum(weights[key] * subscores.get(key, 0.0) for key in weights)

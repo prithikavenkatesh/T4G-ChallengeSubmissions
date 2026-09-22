@@ -7,12 +7,11 @@ const { spawnSync } = require("child_process");
 const yaml = require("js-yaml");
 
 function parseArgs(argv) {
-  const args = { showCases: false, force: false, help: false };
+  const args = { force: false, help: false };
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
     if (arg === "--skill") args.skill = argv[++i];
     else if (arg === "--challenge") args.challenge = argv[++i];
-    else if (arg === "--show-cases") args.showCases = true;
     else if (arg === "--force") args.force = true;
     else if (arg === "--help" || arg === "-h") args.help = true;
   }
@@ -30,7 +29,6 @@ affect the real leaderboard.
 Options:
   --skill <path>      Path to your skill.md (required)
   --challenge <name>  Challenge to practice against, e.g. challenge_1 (required)
-  --show-cases        Print the practice tickets you're being tested on
   --force             Re-grade even if nothing changed since your last local run
   --help              Show this message
 
@@ -56,18 +54,6 @@ function findPracticeCaseFiles(root, challenge) {
       const doc = yaml.load(fs.readFileSync(filePath, "utf8"));
       return doc && doc.practice === true;
     });
-}
-
-function showCases(caseFiles) {
-  console.log("=== Practice cases you are being tested on ===\n");
-  for (const filePath of caseFiles) {
-    const doc = yaml.load(fs.readFileSync(filePath, "utf8"));
-    console.log(`--- ${doc.case_id} (${doc.difficulty}) ---`);
-    for (const ticket of doc.tickets) {
-      console.log(`  ${ticket.id}: ${ticket.text}`);
-    }
-    console.log();
-  }
 }
 
 function stagePracticeCases(root, challenge, caseFiles) {
@@ -234,10 +220,6 @@ function main() {
   if (practiceCaseFiles.length === 0) {
     console.error(`No practice cases found for challenge "${args.challenge}".`);
     process.exit(1);
-  }
-
-  if (args.showCases) {
-    showCases(practiceCaseFiles);
   }
 
   const stagingDir = stagePracticeCases(root, args.challenge, practiceCaseFiles);
