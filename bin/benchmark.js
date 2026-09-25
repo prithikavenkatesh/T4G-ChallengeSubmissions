@@ -32,7 +32,7 @@ Options:
   --force             Re-grade even if nothing changed since your last local run
   --help              Show this message
 
-Requires GEMINI_API_KEY to be set in your environment.
+Requires OPENROUTER_API_KEY to be set in your environment.
 `);
 }
 
@@ -204,8 +204,8 @@ function main() {
     process.exit(args.help ? 0 : 1);
   }
 
-  if (!process.env.GEMINI_API_KEY) {
-    console.error("GEMINI_API_KEY is not set. Set it in your environment before running the benchmark.");
+  if (!process.env.OPENROUTER_API_KEY) {
+    console.error("OPENROUTER_API_KEY is not set. Set it in your environment before running the benchmark.");
     process.exit(1);
   }
 

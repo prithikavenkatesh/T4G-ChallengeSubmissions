@@ -1,6 +1,8 @@
-from google import genai
+import os
 
-MODEL = "gemini-3.1-pro-preview"
+from openai import OpenAI
+
+MODEL = "google/gemini-3.1-pro-preview"
 REQUIRED_SKILL_FIELDS = ["name", "description", "instructions"]
 
 # Harder cases are worth fewer points: they're graded on softer signals
@@ -15,4 +17,7 @@ DIFFICULTY_POINTS = {
 # new dataset that doesn't use baseline/medium/hard still scores instead of crashing.
 DEFAULT_CASE_POINTS = 10
 
-client = genai.Client()
+client = OpenAI(
+    base_url="https://openrouter.ai/api/v1",
+    api_key=os.environ.get("OPENROUTER_API_KEY"),
+)

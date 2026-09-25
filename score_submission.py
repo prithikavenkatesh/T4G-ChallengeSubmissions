@@ -71,8 +71,11 @@ def compute_state_hash(skill_path, cases_path):
 
 
 def call_model(prompt):
-    response = client.models.generate_content(model=MODEL, contents=prompt)
-    return response.text
+    response = client.chat.completions.create(
+        model=MODEL,
+        messages=[{"role": "user", "content": prompt}],
+    )
+    return response.choices[0].message.content
 
 
 def score_case(case, skill):

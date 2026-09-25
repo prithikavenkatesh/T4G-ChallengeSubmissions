@@ -30,7 +30,7 @@ that's where the real test data gets substituted in before your prompt runs.
 python score_submission.py --skill teams/challenge_1/your-team/skill.md --cases test_cases/challenge_1
 ```
 Writes `results/<challenge>/<team>.csv` (or `.invalid` if the skill fails
-validation). Requires `GEMINI_API_KEY` in the environment. Re-running with
+validation). Requires `OPENROUTER_API_KEY` in the environment. Re-running with
 nothing changed (skill, cases, or grading code) costs zero API calls — add
 `--force` to override that cache.
 
@@ -54,7 +54,7 @@ scores share a rank).
 
 ```
 npm install
-GEMINI_API_KEY=... npm run benchmark -- --skill teams/challenge_1/your-team/skill.md --challenge challenge_1
+OPENROUTER_API_KEY=... npm run benchmark -- --skill teams/challenge_1/your-team/skill.md --challenge challenge_1
 ```
 Runs your skill against that challenge's practice cases on your own
 machine — free, unlimited, never touches the real leaderboard.
@@ -67,7 +67,7 @@ First run finds and uses a local Python venv automatically.
 for the intended local time) and publishes the standings as the workflow's
 job summary. Trigger it manually via `workflow_dispatch` to test, or to
 grade a specific challenge by name (defaults to `challenge_1` otherwise).
-Needs `GEMINI_API_KEY` set as a repo secret. Not included yet.
+Needs `OPENROUTER_API_KEY` set as a repo secret. Not included yet.
 
 ## Adding a new challenge
 
