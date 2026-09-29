@@ -1,109 +1,82 @@
-# T4G Challenge Submissions
+# Leaderboard
 
-Write a prompt ("skill") for a challenge, test it locally, then submit it by
-pull request. Once a day an automated grader runs every submitted skill
-against that challenge's graded test cases and updates the leaderboard.
+Grades team-submitted skills against a challenge's test cases
+and ranks teams on a leaderboard. One repo, one folder per challenge.
 
 ## Layout
 
 ```
-teams/<challenge>/_template/skill.md    # copy this to start
-teams/<challenge>/<your-team>/skill.md  # your submission
-test_cases/<challenge>/practice.yaml    # practice cases you can test against
-graders/                                # the exact scoring logic used for real grading
-score_submission.py, run_all.py, ...    # the grading harness
-bin/benchmark.js                        # local practice runner (npm run benchmark)
+teams/<challenge>/<team>/skill.md    # a team's submission
+test_cases/<challenge>/*.yaml        # that challenge's graded cases
+graders/grader_<challenge>.py        # grading logic for that challenge's category
+results/<challenge>/                 # per-team CSVs, .invalid files, history.jsonl
 ```
 
-The graded cases use the same format and scoring as the practice cases,
-with different tickets.
+A challenge is just a folder name shared across `teams/`, `test_cases/`,
+and `results/`. Adding a new challenge means adding a new folder under
+each, plus a matching grader module registered in `graders/__init__.py`.
 
-## 1. Write your skill
+## Submitting a skill
 
-1. Fork this repo and clone your fork.
-2. Copy the challenge's template into a folder named after your team:
-   ```
-   cp -r teams/challenge_1/_template teams/challenge_1/<your-team>
-   ```
-   Team names may only use letters, numbers, `-`, and `_`. The folder name is
-   the name shown on the leaderboard.
-3. Edit `teams/<challenge>/<your-team>/skill.md`. It's YAML and needs
-   `name`, `description`, and `instructions`. `instructions` is your prompt
-   and **must** contain the challenge's placeholder (see the challenge
-   section below): the grader replaces it with the test data before sending
-   your prompt to the model.
+A skill needs to have `name`, `description`,
+and `instructions` filled out. `instructions` must contain the literal placeholder
+that the case's grader expects (e.g. `{tickets}` for `challenge_1`), since
+that's where the real test data gets substituted in before your prompt runs.
 
-## 2. Practice locally (doesn't affect the leaderboard)
+## Grading
 
-Needs Node.js, Python 3, and your own [OpenRouter](https://openrouter.ai) API key.
+**One team, one challenge:**
+```
+python score_submission.py --skill teams/challenge_1/your-team/skill.md --cases test_cases/challenge_1
+```
+Writes `results/<challenge>/<team>.csv` (or `.invalid` if the skill fails
+validation). Requires `OPENROUTER_API_KEY` in the environment. Re-running with
+nothing changed (skill, cases, or grading code) costs zero API calls — add
+`--force` to override that cache.
+
+**Everyone, one challenge, plus the leaderboard:**
+```
+python run_all.py --challenge challenge_1
+```
+
+**Best-ever standings** (each team's highest score across every day this has
+been run, not just today) — run this instead of/after `run_all.py` when you
+want the leaderboard to reflect history, not a single day:
+```
+python run_all.py --challenge challenge_1
+python update_history.py --challenge challenge_1
+```
+`update_history.py` appends today's result to `results/<challenge>/history.jsonl`
+and reports each team's best day so far. Ties are shown as ties (equal
+scores share a rank).
+
+## Practicing locally (no effect on the real leaderboard)
 
 ```
 npm install
-OPENROUTER_API_KEY=... npm run benchmark -- --skill teams/challenge_1/<your-team>/skill.md --challenge challenge_1
+OPENROUTER_API_KEY=... npm run benchmark -- --skill teams/challenge_1/your-team/skill.md --challenge challenge_1
 ```
+Runs your skill against that challenge's practice cases on your own
+machine — free, unlimited, never touches the real leaderboard.
+First run finds and uses a local Python venv automatically.
 
-This scores your skill on the practice cases using the same model and
-grader as the real run. The first run sets up a local Python environment
-automatically. Re-running with nothing changed is free; add `--force` to re-grade anyway.
+## Daily automation
 
-## 3. Submit
+`.github/workflows/daily-leaderboard.yml` runs `run_all.py` +
+`update_history.py` once a day (schedule is UTC — check the cron comment
+for the intended local time) and publishes the standings as the workflow's
+job summary. Trigger it manually via `workflow_dispatch` to test, or to
+grade a specific challenge by name (defaults to `challenge_1` otherwise).
+Needs `OPENROUTER_API_KEY` set as a repo secret. Not included yet.
 
-Commit **only** your `skill.md`, push to your fork, and open a pull request
-into this repo's `main` branch.
+## Adding a new challenge
 
-A check runs on your PR and merges it automatically if:
+1. `test_cases/<new-challenge>/*.yaml` — the graded cases, each with a
+   `category` field.
+2. `graders/grader_<new-challenge>.py` — exposing `build_prompt(case, instructions)`
+   and `score(case, response_text)`; register it in `graders/__init__.py`
+   under that `category` name.
+3. `teams/<new-challenge>/_template/skill.md` — the submission template.
 
-- it changes exactly one file, `teams/<challenge>/<your-team>/skill.md`
-- the challenge is open
-- the file is valid YAML with `name`, `description`, and `instructions`
-- `instructions` contains the challenge's placeholder
-- the team folder is new, or was first submitted by you
-
-If the check fails it comments on the PR explaining why. Fix it and push to
-the same PR.
-
-To update your submission later, open a new PR that edits the same file.
-Your best score across all days counts. Submitted skills are public, so
-other teams can read yours once it's merged.
-
----
-
-## Challenge 1: Ticket triage
-
-**Placeholder:** `{tickets}`
-
-Your skill receives a batch of about 75 real customer-support tickets from
-EuroChef+, a cooking-video streaming service. Each ticket is one line,
-`T<n>: <message>`. Your skill must find the urgent ones.
-
-**Required output** (nothing else):
-
-```
-- T4: Charged twice this month and wants the duplicate refunded. Next action: refund the duplicate charge.
-- T17: Live session fails with error 503. Next action: escalate to the streaming on-call team.
-2 of 75 tickets required urgent action.
-```
-
-- One markdown bullet per urgent ticket: its ID, a one-sentence summary
-  (under 20 words), and a suggested next action. Mention only that ticket's
-  own ID in its bullet.
-- Don't list routine tickets.
-- Final line: `X of N tickets required urgent action.` where N is the number
-  of tickets given and X is the number of bullets you wrote.
-
-**Scoring.** Your skill runs once on each of 3 graded batches (74–76
-tickets each, about 16 urgent). Each batch is scored out of 10:
-
-| Part | Weight | What's checked |
-|------|-------:|----------------|
-| Classification | 60% | +1 for each truly urgent ticket you list, −0.5 for each routine ticket you list, divided by the number of urgent tickets |
-| Format | 20% | the last line is the count line (10%), and every other line is a bullet (10%) |
-| Count | 20% | X on the count line equals the number of bullets |
-
-Your score is the total across the 3 batches as a percentage. "Urgent" is
-defined by the dataset's own labels; `test_cases/challenge_1/practice.yaml`
-has 76 labeled tickets (`ground_truth.urgent_ids_definite`) you can study.
-The exact rules are in `graders/grader_challenge_1.py`.
-
-Data: [EuroChef+ Customer Support Messages](https://huggingface.co/datasets/BenTouss/eurochef-cs)
-(English tickets only).
+Nothing in `score_submission.py`, `run_competition.py`, `run_all.py`, or
+`update_history.py` needs to change — they're all challenge-agnostic.

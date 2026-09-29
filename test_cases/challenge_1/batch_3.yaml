@@ -1,0 +1,183 @@
+case_id: batch_3
+difficulty: batch
+category: challenge_1
+count_check: self_consistency
+source: EuroChef+ Customer Support Messages Dataset (BenTouss/eurochef-cs on Hugging Face), English subset
+tickets:
+- id: T1
+  text: The English subtitles for the 'Paella Valenciana' masterclass translate 'rabbit' as 'chicken'. That's a pretty big error for a traditional recipe.
+- id: T2
+  text: Hi, I accidentally subscribed to two accounts and need a refund for one. I've already sent previous emails without a response. This is urgent!
+- id: T3
+  text: My downloads keep expiring after 24h even though I’m Premium and thought they were available for 30 days offline. Is there a setting I’m missing? iPad, iPadOS 16.
+- id: T4
+  text: I represent a culinary institute in Manchester. We are interested in providing access to EuroChef+ for our 200 students next semester.
+- id: T5
+  text: My iPad app keeps crashing whenever I try to open the 'Pastry Techniques' section. I've tried reinstalling it but it didn't help. I'm on the latest iOS.
+- id: T6
+  text: I run a small restaurant in Manchester and we’re trialling Enterprise. We need to whitelist devices (kitchen iPad + office PC) and block personal phones. Is device management available, and can you see active sessions?
+- id: T7
+  text: The video quality drops significantly in the evenings, making it hard to follow the details. This is not what I expect from a Premium service.
+- id: T8
+  text: 'This is getting really annoying: the app logs me out every single day on my Apple TV. I have to re-enter the password with the remote (painful). Can you please check why sessions aren’t staying active?'
+- id: T9
+  text: I'm disappointed that the subtitles in the recent 'French Pastry' series are out of sync. This makes it hard to follow along. Can you fix this?
+- id: T10
+  text: Your English subtitles for the “Sauerbraten at Home” video are missing for the first 6 minutes, then they suddenly appear. Streaming on Chromecast from Android. Can you fix the subtitle file?
+- id: T11
+  text: I noticed that the app doesn't have a dark mode. It would be really helpful for cooking at night without straining my eyes.
+- id: T12
+  text: Hey, just wanted to say I love the new 4K content. Any plans to release an app for Apple TV specifically? AirPlay is okay but a native app would be better.
+- id: T13
+  text: I really enjoy the French pastry section, but I'd love to see more authentic Portuguese desserts. Are there any plans to add Pastéis de Nata tutorials?
+- id: T14
+  text: The unit conversion tool is broken. When I switch from Celsius to Fahrenheit, it says bake at 350°C which would burn everything!
+- id: T15
+  text: Hi, I'm a huge fan of your platform but the 'Step-by-step' mode doesn't pause at the right moments anymore. Could you fix this?
+- id: T16
+  text: Does the free tier include access to the unit converter tool? I can't seem to find it on the interface.
+- id: T17
+  text: Hello, I’m on the free tier and the app keeps telling me “Upgrade to Premium to add to favorites”, but I already have 7 favorites saved from last month. Did the rules change? If favorites are now Premium-only, please clarify.
+- id: T18
+  text: 'The English subtitles for the “Sauerbraten at Home” episode have a weird typo: it says “add 2 cups of salt” at 09:12. The chef clearly says “2 tsp”. Can you fix the subtitle track?'
+- id: T19
+  text: Could you please add more content focusing on vegan desserts? I'm a huge fan of your videos but would love some more plant-based options.
+- id: T20
+  text: 'Your “unit conversion” is wrong in the ‘Stamppot’ recipe: it converts 1 kg potatoes to 1 lb instead of 2.2 lb. That’s a pretty big mistake. Can you fix the converter?'
+- id: T21
+  text: I'm hosting a dinner party in 2 hours and the video for the main course won't load! It just spins. I've cleared cache and restarted. HELP!
+- id: T22
+  text: My download speed for offline videos is incredibly slow within the app, even though my Wi-Fi is fast. It takes an hour to download a 10-minute clip.
+- id: T23
+  text: I signed up for the free trial but forgot to cancel. I haven't watched any videos. Can you please refund the charge? I really can't afford this right now.
+- id: T24
+  text: I would love to see more plant-based dessert recipes on EuroChef+. It's hard to find good vegan desserts, and your platform could fill this gap!
+- id: T25
+  text: It would be amazing if you could integrate with Apple Health or MyFitnessPal to track nutritional info from the recipes we cook.
+- id: T26
+  text: I'm trying to update my credit card details because my old one expired, but the 'Save' button is unresponsive on the website.
+- id: T27
+  text: Hello, I represent a culinary institute in Dublin. We are interested in an enterprise package for our 50 students and 5 instructors. Do you offer API access for LMS integration?
+- id: T28
+  text: I'm having trouble upgrading to Premium. When I click 'Confirm Payment', the page just reloads and nothing happens. I've tried on Chrome and Safari.
+- id: T29
+  text: Could you please add the option to share a playlist with another user (read-only link)? I’m putting together a ‘French basics’ playlist for my partner and it’s tedious to send video links one by one.
+- id: T30
+  text: I’m being charged €9.99 but I’m pretty sure I cancelled last month. The subscription page shows “inactive”, yet my bank shows a new debit today. Please investigate and refund if this is an error.
+- id: T31
+  text: I love the app, but I'd really like to see a feature where we can filter recipes by 'prep time'. Sometimes I only have 20 minutes and it's hard to find quick recipes without clicking on each one.
+- id: T32
+  text: I can’t log in on Chrome (Mac). After entering the code from the email, it just loops back to the login screen. No error message. Works on my phone though. Can you check what’s wrong with web login?
+- id: T33
+  text: Can you tell me how to download videos for offline viewing? I'm a Premium subscriber but can't find the option in the app.
+- id: T34
+  text: I'm a culinary instructor at a college in London. Do you offer bulk subscriptions for students?
+- id: T35
+  text: I WANT A REFUND NOW. You charged me for a full year when I only wanted a month. This is a scam! Reverse the charge immediately!
+- id: T36
+  text: Hello, I manage a culinary arts program at a college in Dublin. We're interested in an enterprise license for 50 students and 5 faculty members. Do you offer educational discounts?
+- id: T37
+  text: 'The ingredient scaling is off: when I switch the ‘Tarte Tatin’ recipe from 6 to 10 servings, it changes 3 apples to 30 apples. That can’t be right. Please check the scaling logic.'
+- id: T38
+  text: I'm trying to update my credit card info but the 'Save' button is greyed out. Please help, I don't want to lose access.
+- id: T39
+  text: I accidentally subscribed to the wrong plan and now I'm being charged more than expected. I need this corrected and a refund for the difference.
+- id: T40
+  text: I was charged for a full year but I only selected the monthly plan! Please fix this and refund the difference immediately.
+- id: T41
+  text: Hi, I'm trying to watch the live cooking session but it keeps buffering every few seconds. My internet connection is strong (100mbps). Please help, I'm cooking along!
+- id: T42
+  text: Hi, I was charged €9.99 twice this month, and I only have one Premium account. Can you issue a refund for the mistake?
+- id: T43
+  text: 'I was charged twice this month (two separate €9.99 transactions). One is pending, one is completed. Please fix this and refund the extra charge. Account email: (can provide privately).'
+- id: T44
+  text: I'm hosting a dinner party tonight and the 'Beef Wellington' guide won't play! It says 'Error 203'. Please help, guests are arriving in 3 hours!
+- id: T45
+  text: Hi, I've been having trouble with the 'Ratatouille' recipe video—it keeps freezing at 10:02. Is there a way to fix this issue?
+- id: T46
+  text: I’m on the free tier and I’m considering upgrading mainly for downloads. Is offline mode available on laptops (Windows/Mac) or only on mobile? Couldn’t find a clear answer in the FAQ.
+- id: T47
+  text: I appreciate the diversity of your content but noticed that the Spanish subtitles often have grammar errors. Could this be looked into?
+- id: T48
+  text: I'm a free user but I'm considering upgrading. Does the Premium plan allow me to download videos to my iPad for offline viewing on a plane?
+- id: T49
+  text: I can't log in to the Smart TV app. It says 'Device limit reached' but I only have it on my phone and this TV. Please help.
+- id: T50
+  text: Hello, I represent a chain of restaurants in London. We're interested in using your masterclasses for staff training. Do you offer bulk licensing?
+- id: T51
+  text: This is getting ridiculous. Every evening around 20:00 the app buffers like crazy and drops to SD, while my internet is fine. If you can’t deliver what I pay for, I want a refund for this month.
+- id: T52
+  text: Is there any way to filter recipes to exclude allergens like nuts and shellfish? It's quite dangerous for me to have to check every single ingredients list manually.
+- id: T53
+  text: Can you add more subtitles in Italian? My nonna would love to follow along with some of your videos!
+- id: T54
+  text: I'm trying to cast the 'Beef Wellington' masterclass to my Chromecast but it keeps disconnecting every 5 minutes. It's ruining our dinner plans!
+- id: T55
+  text: The audio is completely missing from the 'Tarte Tatin' masterclass starting at the 15-minute mark. I've tried reloading the page but it persists.
+- id: T56
+  text: Hi, I'd love to see a masterclass on traditional British pies using hot water crust pastry. Maybe something from a chef in Yorkshire?
+- id: T57
+  text: Is there any way to filter recipes by 'Dairy-Free'? I spend too much time clicking on recipes only to find out I can't eat them.
+- id: T58
+  text: The audio is out of sync on the 'Spanish Paella' video by about 2 seconds. It's really distracting watching the chef chop onions before hearing the sound.
+- id: T59
+  text: Hi, I run a small bistro in Paris and I'm interested in featuring EuroChef+ content for our chefs. Is there a way to set up a business account with multiple users?
+- id: T60
+  text: I can’t cancel my subscription because the ‘Manage plan’ page keeps loading forever (just a spinner). Tried Safari and Chrome on Mac. I’m not paying another month for a button that doesn’t work.
+- id: T61
+  text: I was charged for a renewal yesterday but I'm sure I cancelled last week. I don't use the service anymore. Can you please check logs and refund me?
+- id: T62
+  text: I am a chef at a bistro and would like to use EuroChef+ for inspiration. Can I get a business account for my team?
+- id: T63
+  text: Could you please add more Balkan recipes? I’m specifically looking for a solid ćevapi tutorial and maybe burek dough techniques. Not urgent, just a content wish.
+- id: T64
+  text: Hello, I’ve been a Premium user for 2 years. Recently, I noticed buffering issues during live sessions, which never happened before. Can you check?
+- id: T65
+  text: Could you add a feature to filter recipes by 'pantry staples'? It would be great to find recipes based on what I already have in my kitchen.
+- id: T66
+  text: The audio is out of sync on the 'Paella Valenciana' masterclass. It's about 3 seconds delayed which makes it really annoying to watch.
+- id: T67
+  text: I'm having trouble with the download feature. Even after downloading, the videos won't play offline. It's quite frustrating as I travel a lot.
+- id: T68
+  text: I cancelled my subscription last week but my account page still says “Renewal scheduled”. I don’t want to be billed again. Can you confirm the cancellation went through?
+- id: T69
+  text: Hi, I cancelled my subscription last month but I still have access to Premium features. I just want to make sure I won't be charged again?
+- id: T70
+  text: I was charged for a full year but I only wanted to subscribe for one month! Please refund the difference immediately.
+- id: T71
+  text: My video keeps freezing at exactly 12:45 in the 'Beef Wellington' episode. I've tried reloading and clearing cache but nothing works.
+- id: T72
+  text: 'Feature suggestion: please add a ‘cook mode’ that keeps the screen awake and shows ingredients + current step in bigger text. I use EuroChef+ on a tablet in the kitchen and it keeps dimming.'
+- id: T73
+  text: I run a small culinary school in Dublin. We need an Enterprise plan for 30 students, but we also need SSO (Google Workspace) so we don’t manage passwords manually. Do you offer SSO or is it on the roadmap?
+- id: T74
+  text: Hello, we are a culinary school based in London. We are interested in setting up 20 student accounts under one billing entity. Do you offer enterprise pricing?
+constraints_shown_to_student:
+- Classify each ticket as Urgent or Routine based on its content
+- 'For Urgent tickets only, output one markdown bullet: ticket ID, one-sentence issue summary (under 20 words), and a suggested next action'
+- Routine tickets are not shown individually, only counted
+- 'End with exactly one line: ''X of 74 tickets required urgent action.'' where X equals the number of bullets above'
+- 'No other text: only the bullets and the final count line'
+ground_truth:
+  urgent_ids_definite:
+  - T2
+  - T7
+  - T14
+  - T21
+  - T26
+  - T35
+  - T38
+  - T39
+  - T40
+  - T41
+  - T42
+  - T44
+  - T52
+  - T54
+  - T60
+  - T70
+grading_weights:
+  classification_accuracy: 0.6
+  format_compliance: 0.2
+  count_matches_own_list: 0.2
+trials: 1

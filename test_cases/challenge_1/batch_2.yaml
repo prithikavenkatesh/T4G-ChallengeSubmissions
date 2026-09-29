@@ -1,0 +1,183 @@
+case_id: batch_2
+difficulty: batch
+category: challenge_1
+count_check: self_consistency
+source: EuroChef+ Customer Support Messages Dataset (BenTouss/eurochef-cs on Hugging Face), English subset
+tickets:
+- id: T1
+  text: Hello, I upgraded to a Premium account, but I'm still seeing ads. Is there something wrong with my subscription?
+- id: T2
+  text: Hi, I'm quite disappointed as the 'Cordon Bleu' recipe video cuts off at the end. It's missing the final plating instructions, which are crucial!
+- id: T3
+  text: 'The English subtitles on “Coq au Vin – Chef Luc Renard” have a typo that changes meaning: it says “add 2 cups of salt” at 09:12 (should be stock). Can you get this corrected?'
+- id: T4
+  text: Hello, our restaurant would like to feature some of your videos on screens in our dining area. How can we do this legally?
+- id: T5
+  text: The unit converter is broken on the 'Lemon Tart' recipe. When I switch to ounces, the flour amount shows as 'NaN'.
+- id: T6
+  text: The shopping list for the 'Coq au Vin' seems to have the wrong quantity for wine. It says 200ml but the video mentions a whole bottle. Which is correct?
+- id: T7
+  text: Are you planning to add any masterclasses on Nordic fermentation? I'd love to see something from Noma or similar chefs.
+- id: T8
+  text: The 'Step-by-step' mode is buggy on my Samsung TV. It pauses but then skips the next 5 seconds when I resume.
+- id: T9
+  text: I need help ASAP! I'm hosting a cooking night and none of the videos will load on my iPad, even though I have good WiFi.
+- id: T10
+  text: I'm a bit disappointed that there's no content specifically for lactose-free diets. Are there plans to add some?
+- id: T11
+  text: Hi, I’m managing an Enterprise account for a restaurant group. Is there a way to see a usage report per user (hours watched, most viewed playlists) for training compliance? If not, please consider it.
+- id: T12
+  text: Hello, I'm experiencing issues with streaming on my Smart TV. The video keeps stopping every few minutes. I'm using a Samsung TV. Any help would be appreciated.
+- id: T13
+  text: Hi EuroChef+ team, playback keeps stuttering on my Windows laptop (Chrome). The video “Paella Valenciana - Chef Marisol” freezes at exactly 18:34 every time, then jumps ahead and I miss a whole step. Cleared cache, tried Incognito, same result. Any workaround?
+- id: T14
+  text: I was charged twice this month. Once on the 1st and again on the 15th. Please check my account.
+- id: T15
+  text: I've been locked out of my account. It says 'suspicious activity' but I just travelled to Italy for vacation. Can you unlock it? I want to cook tonight.
+- id: T16
+  text: Could you add a filter for lactose-free recipes? The “dietary restrictions” search has gluten-free and vegan, but nothing for lactose intolerance. Not urgent, just a suggestion.
+- id: T17
+  text: I'm trying to upgrade to Premium to watch the Beef Wellington masterclass, but my card keeps getting declined. I've tried two different cards. Is your payment system down?
+- id: T18
+  text: 'I''m getting ''Error Code: STREAM_INIT_FAIL'' on my Samsung Smart TV. It works fine on my phone on the same wifi. The TV app is up to date.'
+- id: T19
+  text: Hi, could you please add more plant-based recipes, especially for mains? I'm trying to incorporate more of these into my diet.
+- id: T20
+  text: I can't seem to log in using my Facebook account anymore. It was working fine until recently. Is this feature still supported?
+- id: T21
+  text: We are a chain of bistros in London and want to use your platform for staff training. Do you have an API to integrate with our internal LMS?
+- id: T22
+  text: Could you please add more content featuring traditional Irish stews and baking? I feel like that region is underrepresented.
+- id: T23
+  text: 'Feature idea: could you add a ‘hands-free’ mode where saying “next step” advances step-by-step? Would be amazing when cooking with messy hands.'
+- id: T24
+  text: I'm trying to upgrade to Premium but the payment page keeps giving me an error. I don't want to miss out on the exclusive content.
+- id: T25
+  text: I've been experiencing poor video quality for the past few days even though I'm connected to high-speed internet. Please address this issue quickly.
+- id: T26
+  text: Please add more content from Portugal (cataplana, pastéis de nata, caldo verde) and ideally with EN subtitles. The Iberian section is basically Spain-only right now.
+- id: T27
+  text: The conversion tool is broken. When I switch from Celsius to Fahrenheit on the macaron recipe, the oven temp shows as 1000 degrees!
+- id: T28
+  text: I was charged €9.99 even though I cancelled during the trial period. I cancelled on 05 Jan, charge shows on 06 Jan. Please refund and confirm my subscription is closed.
+- id: T29
+  text: The subtitles in EN for “Carbonnade Flamande” are missing entire lines when the chef lists spices. It’s fine for casual watching but not when following along. Could you re-upload or fix the subtitle file?
+- id: T30
+  text: 'This is getting annoying: AirPlay connects, then drops after ~3 minutes every time. It happens on multiple videos, not just one. iPhone 14 Pro -> Apple TV 4K, both on the same Wi‑Fi. Please advise.'
+- id: T31
+  text: I keep getting logged out of my account every time I close the app on my Android phone. It's quite frustrating, can you help?
+- id: T32
+  text: Hi there, I'm trying to export the shopping list for the Beef Wellington recipe but the button is greyed out. I'm on the Premium plan so this should work, right?
+- id: T33
+  text: Hi there, I noticed I was charged twice for my subscription this month. Can you please look into this and refund the duplicate charge?
+- id: T34
+  text: I was charged €9.99 twice this month (same day, same card). I only have one account. Please refund one of the charges and tell me how to prevent this happening again.
+- id: T35
+  text: Could you add more Mediterranean diet recipes, please? I'm trying to explore different healthy options.
+- id: T36
+  text: I was charged €9.99 twice this month (same card, same day). I only have one account. Please refund the duplicate charge and confirm my subscription stays active.
+- id: T37
+  text: I would like to suggest adding a feature where we can rate the recipes after trying them. It would be helpful for other users.
+- id: T38
+  text: Do you offer any student discounts? 10 euros is a bit steep for a student budget but I really need this for my coursework.
+- id: T39
+  text: The audio is out of sync on the “Coastal Basque Travel Doc – Episode 2” around 12:10–14:00. Voices lag behind the video by ~2 seconds. Happens on Chromecast and in the browser.
+- id: T40
+  text: Your weekend live session is about to start and the stream won’t load on Chrome (MacBook). It just shows a black screen with “LIV-201”. I can play regular videos fine. Can someone help ASAP?
+- id: T41
+  text: Hi, I'm trying to upgrade to the annual plan to save money, but the checkout page keeps spinning and won't process my card. I've tried two different cards.
+- id: T42
+  text: I absolutely love the platform! Could you please add a feature to let us add private notes to recipes? I like to tweak ingredients and want to remember my changes.
+- id: T43
+  text: Is there a way to create a playlist of my favorite videos? I'd love to organize them better.
+- id: T44
+  text: I WAS CHARGED FOR A YEARLY SUBSCRIPTION BUT I ONLY WANTED MONTHLY. PLEASE REFUND THE DIFFERENCE IMMEDIATELY I CANNOT AFFORD THIS.
+- id: T45
+  text: It would be great if we could share our own photos of the recipes we cooked in a comment section.
+- id: T46
+  text: Hi, I'm unable to access any live streams on weekends despite being a Premium member. Can you look into this?
+- id: T47
+  text: I forgot my password and the reset email isn't arriving. I've checked my spam folder. It's been 30 minutes.
+- id: T48
+  text: 'Feature request: could you add a ‘cook mode’ that keeps the screen awake automatically? When I’m following pastry recipes, my Android tablet locks after 2 minutes and I have flour on my hands…'
+- id: T49
+  text: Hi there, I noticed that the ingredient list for the 'Classic Tiramisu' doesn't match what the chef is using in the video. The PDF shopping list says 200g of sugar but he clearly says 100g. Which one is correct?
+- id: T50
+  text: Video playback error 203. I've cleared my cache and cookies but nothing works. I'm on Chrome Windows 10.
+- id: T51
+  text: I was charged twice for my subscription this month. Once on the 1st and again on the 3rd. Please refund the duplicate charge ASAP.
+- id: T52
+  text: Hi, I noticed there are no subtitles available for the 'Italian Cuisine Masterclass'. It would be really helpful if you could add them.
+- id: T53
+  text: Hi, do you have any plans for more Balkan recipes (e.g., sarma, burek, ajvar)? I love the regional stuff on EuroChef+ and would happily watch a whole series on that.
+- id: T54
+  text: Hello, I'm considering EuroChef+ for my restaurant team in Berlin. Could you provide more details on the enterprise subscription?
+- id: T55
+  text: I've forgotten which email I used to sign up. I have the receipt number from my credit card statement, can you help me locate my account?
+- id: T56
+  text: I would love to see more content from Eastern Europe. Maybe some Polish Pierogi or Hungarian Goulash masterclasses? The current selection is very France/Italy heavy.
+- id: T57
+  text: I’m running a small bistro in Manchester and looking at Enterprise. Can we create separate profiles for kitchen vs front-of-house, with different permissions (no billing access for staff)?
+- id: T58
+  text: Could you please add a filter for 'Dairy-Free' recipes? It's really hard to find suitable desserts right now without opening every video.
+- id: T59
+  text: It would be great if we could filter recipes by 'Pantry Ingredients'. Like, I type in what I have, and you show me what I can cook.
+- id: T60
+  text: I love the authentic French recipes but could you add more videos with in-depth background stories about the regional cuisines?
+- id: T61
+  text: The audio is out of sync with the video on the 'Paella Valenciana' masterclass. It's about 3 seconds delayed, which makes it really hard to follow the chopping techniques.
+- id: T62
+  text: My downloads disappeared overnight. I’m Premium and had 8 videos saved (incl. “Paris-Brest Masterclass”) for offline use. Now the Offline tab is empty and re-downloading says “Storage permission required” even though it’s enabled (Android 14).
+- id: T63
+  text: Could you add more content around Portuguese cuisine? Specifically bacalhau variations and pastéis de nata techniques. I’d honestly upgrade if there was a dedicated series.
+- id: T64
+  text: I’m trying to reset my password but the reset link expires instantly. It says “token invalid” even if I click it right away. I’ve requested 5 emails now. Please help me get back in.
+- id: T65
+  text: Can we get a 'Dark Mode' for the app? The white screen is too bright when I'm watching videos in bed.
+- id: T66
+  text: The unit converter tool is broken. When I switch from Metric to Imperial on the Scone recipe, it says I need 50 cups of flour instead of 500g. That can't be right.
+- id: T67
+  text: Hi EuroChef+ team, I’m on Premium and 4K suddenly disappeared on my LG Smart TV app. It only lets me pick “HD” and tops out around 1080p even though my plan is active. Same account shows 4K on my laptop. Any idea what’s going on?
+- id: T68
+  text: I can't find the option to change my email address in the profile settings. I'm changing providers and need to update it ASAP.
+- id: T69
+  text: I can't find the option to change the video quality to 4K on the web browser. Is it only available on the TV app?
+- id: T70
+  text: Hi EuroChef+ support, the ‘step-by-step’ mode isn’t pausing at the right moments on my iPad. In the “Paella Valenciana – Chef Javier Montalbán” video it should pause after step 3, but it plays straight through and I miss the timing. iPad Air (iPadOS 17). Any fix?
+- id: T71
+  text: I downloaded a bunch of videos for offline use (Premium) but they disappear after 24 hours and I have to re-download. Is there a limit or is the app deleting them? Using Android 13 on a Pixel 7.
+- id: T72
+  text: The shopping list export (CSV) swaps commas and decimals. It turns “0.5 kg” into “05 kg” when I import into Google Sheets. Can you provide a proper CSV format option?
+- id: T73
+  text: I'm trying to watch the live Risotto masterclass but I'm getting 'Error 2002' on my Samsung Smart TV. It works fine on my phone but I need it on the big screen now!
+- id: T74
+  text: We need more authentic British puddings! Sticky Toffee, Spotted Dick, Treacle Tart. The current selection is very French-focused.
+constraints_shown_to_student:
+- Classify each ticket as Urgent or Routine based on its content
+- 'For Urgent tickets only, output one markdown bullet: ticket ID, one-sentence issue summary (under 20 words), and a suggested next action'
+- Routine tickets are not shown individually, only counted
+- 'End with exactly one line: ''X of 74 tickets required urgent action.'' where X equals the number of bullets above'
+- 'No other text: only the bullets and the final count line'
+ground_truth:
+  urgent_ids_definite:
+  - T1
+  - T2
+  - T9
+  - T15
+  - T17
+  - T24
+  - T25
+  - T28
+  - T40
+  - T41
+  - T44
+  - T46
+  - T47
+  - T62
+  - T64
+  - T73
+grading_weights:
+  classification_accuracy: 0.6
+  format_compliance: 0.2
+  count_matches_own_list: 0.2
+trials: 1

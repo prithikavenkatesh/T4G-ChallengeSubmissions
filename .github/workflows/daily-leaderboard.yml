@@ -1,0 +1,53 @@
+name: Daily Leaderboard
+
+on:
+  schedule:
+    - cron: "0 1 * * *"  # 1 AM UTC ~= 5 PM PDT the previous day. Not DST-aware — adjust manually when clocks change.
+  workflow_dispatch:
+    inputs:
+      challenge:
+        description: "Which challenge to grade (e.g. challenge_1)"
+        required: false
+        default: "challenge_1"
+        type: string
+
+env:
+  # workflow_dispatch lets you pick the challenge when triggering manually;
+  # a schedule trigger can't supply inputs at all, so it always falls back
+  # to the default above. Not a secret: just an identifier, and secrets get
+  # redacted (***) in logs.
+  CHALLENGE_NAME: ${{ github.event.inputs.challenge || 'challenge_1' }}
+
+permissions:
+  contents: write   # needed to commit the history file back
+
+jobs:
+  grade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - run: pip install -r requirements.txt
+
+      - name: Run today's grading
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: python run_all.py --challenge "$CHALLENGE_NAME"
+
+      - name: Update history and report best-ever standings
+        run: python update_history.py --challenge "$CHALLENGE_NAME" | tee leaderboard_output.txt
+
+      - name: Publish summary
+        run: cat leaderboard_output.txt >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit updated history
+        run: |
+          git config user.name "leaderboard-bot"
+          git config user.email "actions@github.com"
+          git add "results/${CHALLENGE_NAME}/history.jsonl"
+          git diff --quiet --cached || git commit -m "Update leaderboard history for $(date -u +%F)"
+          git push
