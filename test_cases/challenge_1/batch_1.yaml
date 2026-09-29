@@ -1,0 +1,188 @@
+case_id: batch_1
+difficulty: batch
+category: challenge_1
+count_check: self_consistency
+source: EuroChef+ Customer Support Messages Dataset (BenTouss/eurochef-cs on Hugging Face), English subset
+tickets:
+- id: T1
+  text: I cancelled Premium last week but my account still says ‘Renewing on 20 Jan’. If it renews again I want a refund. Can someone confirm cancellation went through?
+- id: T2
+  text: The Chromecast feature doesn't seem to work properly with your app. Videos lag a lot. Could you look into this?
+- id: T3
+  text: Can you please add more gluten-free baking recipes? The current selection is very limited and I'd love to learn how to make proper GF croissants.
+- id: T4
+  text: The subtitles for the French pastry chef are impossible to read because they are white text on a white background. Please add a shadow or box.
+- id: T5
+  text: The audio is out of sync on the Beef Wellington masterclass video. It's about 3 seconds behind the video.
+- id: T6
+  text: I'd love to see more content on British baking, specifically traditional pies and puddings. The current selection is very focused on French pastry.
+- id: T7
+  text: Hello, I’m on the free tier and I keep getting the same ad repeated every 30 seconds on the “French onion soup” episode. It makes the video basically unwatchable. Is this a bug or intended? (Chrome on MacOS)
+- id: T8
+  text: Can I use my account on two devices at the same time? My wife wants to watch the baking show while I watch the grilling masterclass.
+- id: T9
+  text: I'm a culinary instructor at a college in Bristol. We need 30 student accounts for the upcoming semester. Do you offer educational discounts?
+- id: T10
+  text: Can you please add more gluten-free pastry recipes? The current selection is very limited and I'd love to learn how to make GF croissants.
+- id: T11
+  text: I accidentally created my account with the wrong email domain (typed .con instead of .com). Now I can’t verify and I’m locked out on new devices. Can support change the email address for me?
+- id: T12
+  text: I can’t remove an old device from my account. It still shows my ex’s Samsung TV as ‘active’ and I’ve hit the device limit. The ‘sign out of all devices’ button just spins. Can you clear devices server-side?
+- id: T13
+  text: I'd love to see more content on traditional British puddings. Maybe a series on Spotted Dick or Sticky Toffee Pudding?
+- id: T14
+  text: Hello, I noticed the shopping list for the 'Beef Stroganoff' has incorrect measurements. It suggests way too much sour cream. Can you fix this?
+- id: T15
+  text: Hello, I noticed the unit conversion in the 'Tarte Tatin' recipe is off. It lists 1 cup of sugar, but the gram conversion seems wrong. Can you check this?
+- id: T16
+  text: 'The 4K option disappears randomly. Sometimes I only get 1080p max even though I’m on Premium and my connection is fine (500 Mbps). It happens mostly in the evenings. Device: LG Smart TV app. Any known issues?'
+- id: T17
+  text: I can't seem to update my email address on my account. Every time I try, it says 'invalid email format' even though I'm sure it's correct. What should I do?
+- id: T18
+  text: The 'Add to Shopping List' feature is exporting the wrong units. It changed 500g of flour to 500oz, which would be a disaster! Please fix this bug.
+- id: T19
+  text: Hi, could you please send me a VAT invoice for my last subscription payment? I need it for my company expenses.
+- id: T20
+  text: Hi, I’m on the free tier. Is there a way to sort search results by cooking time (e.g., under 30 min)? Right now it’s hard to find quick weeknight recipes.
+- id: T21
+  text: I was charged €9.99 twice this month (same day, two separate transactions). I only have one Premium account under this email. Please refund the duplicate charge and confirm my subscription status.
+- id: T22
+  text: Any chance you could add a 'Dark Mode' for the app? The white screen is blinding when I'm checking recipes late at night.
+- id: T23
+  text: I was billed for an annual plan even though I selected monthly (I’m 99% sure). The receipt shows €119.88. I need this corrected ASAP or I’ll do a chargeback.
+- id: T24
+  text: Is there any way to share my shopping list directly to WhatsApp? Right now I have to copy-paste everything.
+- id: T25
+  text: Can you please add a 'Picture-in-Picture' mode for the iPad app? It would be great to keep the recipe video open while I check my emails.
+- id: T26
+  text: The English subtitles on the Spanish Paella masterclass are terrible. They translate 'gambas' as 'legs' instead of prawns.
+- id: T27
+  text: I've been charged twice this month for my Premium subscription. Please refund one of the charges immediately.
+- id: T28
+  text: Hi there, I've been trying to watch the 'Ratatouille' recipe video, but it keeps freezing at 3:12 mark on my laptop using Firefox. Can you help?
+- id: T29
+  text: THIS IS RIDICULOUS. I have been locked out of my account for 24 hours. I reset the password and it still says invalid. I demand access immediately!!!
+- id: T30
+  text: I'm having trouble with the automatic unit conversion. It keeps showing oz instead of grams despite my settings. Can you help?
+- id: T31
+  text: 'Feature suggestion: please let us pin a recipe to the top of a playlist, or sort playlists by ‘recently cooked’. My ‘Weekend baking’ list is chaos right now.'
+- id: T32
+  text: Any plans to add more Eastern European cuisine? I'd love to see some authentic Polish pierogi or Hungarian goulash recipes.
+- id: T33
+  text: The English subtitles for the French chef's 'Coq au Vin' are hilarious but wrong. He said 'simmer' but the subtitle says 'summer'. There are many typos like this.
+- id: T34
+  text: Hi there, I've noticed that Chef Alain's masterclass has no subtitles available. It would be great to have them for better understanding, especially for non-native speakers.
+- id: T35
+  text: I noticed a mistake in the ingredients list for the 'Sauerbraten' recipe. It lists 2 teaspoons of ginger, which seems out of place. Can this be corrected?
+- id: T36
+  text: I CANNOT LOGIN. It says 'invalid credentials' but I just reset my password 5 minutes ago. This is ridiculous, I need to access the site now.
+- id: T37
+  text: I’m trying to reset my password but the reset email arrives 30–40 minutes late, and by then the link says it’s expired. Can you extend the validity or send a manual reset?
+- id: T38
+  text: I can't log into my account; it says my email doesn't exist. This is ridiculous. I need access now!
+- id: T39
+  text: Hi EuroChef+ team, the video for “Coq au Vin (slow cook)” keeps stopping at exactly 12:08 on my Apple TV 4K. It jumps back to 12:05 and repeats in a loop. I’ve tried restarting the app and the device. Any idea what’s going on?
+- id: T40
+  text: I cancelled Premium yesterday but I still have access and I’m worried I’ll be billed again at renewal. Can you confirm the cancellation actually went through and tell me the exact end date of my subscription?
+- id: T41
+  text: Hello, could you provide a VAT invoice for my Premium subscription for December and January? I’m a freelance chef in Ireland and need it for accounting. The billing page only shows a receipt without VAT details.
+- id: T42
+  text: Hi, does the offline mode work on Macbooks or is it just for mobile devices? I have a long flight coming up.
+- id: T43
+  text: I think the app layout for smartphones could be improved. It's a bit cluttered at the moment, especially when browsing recipes.
+- id: T44
+  text: This is getting ridiculous. AirPlay used to work fine, now it just shows the EuroChef+ logo on my TV and spins forever. iPhone 15 Pro, iOS 17.3, LG TV. I’ve restarted everything. Please sort this out.
+- id: T45
+  text: Hey, I'm really enjoying the platform but I've noticed that the subtitles often miss important details in the French recipes. Could you improve this?
+- id: T46
+  text: I’m an Enterprise admin for a culinary school in Dublin. We need SSO (Azure AD / Google Workspace) because managing 60 student passwords manually is a nightmare. Do you have SSO on the roadmap or any workaround?
+- id: T47
+  text: 'Your app logged me out on all devices and now I can’t log back in: it says “Invalid credentials” even though I’m sure the password is right. Reset email arrives, but after resetting it still fails. Please help ASAP, I have guests coming and I’m mid-way through the ‘Coq au vin’ video.'
+- id: T48
+  text: Hello, I represent a culinary arts college in Dublin. We are interested in purchasing bulk access for our 200 students for the upcoming semester.
+- id: T49
+  text: This is the third weekend in a row the live session starts and I get “Stream unavailable (L-07)”. I’ve rebooted router, updated the app, everything. If you can’t deliver live content, I want a refund for this month.
+- id: T50
+  text: I forgot my password and the reset link you sent me is expired. Can you send a new one please?
+- id: T51
+  text: The app keeps logging me out every time I close it. It's very annoying to have to type my password every single time I want to check a recipe.
+- id: T52
+  text: I forgot which email I used to sign up. When I try password reset with my usual addresses, I don’t receive anything (checked spam). Can you help me locate the account if I provide last 4 digits of the card and my name?
+- id: T53
+  text: Hi, I was charged €9.99 twice this month (same day, two separate transactions). I’m requesting a refund for the duplicate charge. I can send bank screenshots if needed.
+- id: T54
+  text: 'Urgent: the live weekend session won’t start. It says “This stream is not available in your region (GEO-01)”. I’m in Brussels, so… what? Premium subscriber, and guests are literally waiting.'
+- id: T55
+  text: I was charged twice for my subscription this month. Once on the 1st and again on the 3rd. Please refund the second charge immediately.
+- id: T56
+  text: Can I use my account on two devices at the same time? My husband wants to watch in the kitchen while I watch in the living room.
+- id: T57
+  text: The English subtitles for the Spanish Paella video are terrible. They translated 'gambas' as 'legs' instead of 'prawns'. It's quite confusing.
+- id: T58
+  text: Hello, I teach at a culinary school in Berlin, and we're interested in offering EuroChef+ to our students. Could you provide information on educational pricing?
+- id: T59
+  text: Please add more Spanish subtitles. I’m learning French cooking but my partner prefers ES. Even for the big masterclasses, ES isn’t available.
+- id: T60
+  text: I'm locked out of my account. It says 'too many login attempts' but I only tried once. I need to access my saved recipes for a dinner party tonight!
+- id: T61
+  text: Is there any way to share a specific recipe with a friend who doesn't have an account? Like a guest pass or a one-time link?
+- id: T62
+  text: Hello, I represent a culinary arts college in Manchester. We are looking to purchase bulk licenses for 50 students for the upcoming semester. Do you offer educational discounts?
+- id: T63
+  text: I've been a loyal subscriber for 2 years, but the quality of the new 'Budget Meals' series is really low compared to your usual standards. The lighting is bad and the audio echoes.
+- id: T64
+  text: Hi, is there a possibility to integrate EuroChef+ with smart home devices like Amazon Echo? It would be great to have voice commands.
+- id: T65
+  text: I keep receiving emails about new features, but when I log in, I don't see anything new. Is there a delay for certain users?
+- id: T66
+  text: I can’t log in on my Samsung Smart TV app. It keeps saying “Invalid token (AUTH-27)”. Logging in on my phone works fine with the same email/password. Can you help?
+- id: T67
+  text: Hello, I'm a chef looking for advanced techniques in molecular gastronomy. Do you have any plans to expand your content in this area?
+- id: T68
+  text: Hi there, I'm trying to cast the 'Paella Valenciana' video to my LG TV using AirPlay, but the sound is playing on my phone while the video is on the TV. Very annoying.
+- id: T69
+  text: I'd love to see more seasonal vegetarian recipes from different European regions. Are there plans to expand this category?
+- id: T70
+  text: Would be great if we could share our favorite playlists with other users directly through a link. Me and my friends love cooking together.
+- id: T71
+  text: I've been charged twice this month! Once on the 1st and again on the 15th. I need one of these refunded immediately.
+- id: T72
+  text: Hello, I’d like a copy of my invoices for the last 6 months for expense claims (Premium, paid by card). Where can I download VAT invoices? If it’s not in the app, can support email them to me?
+- id: T73
+  text: Could you add more content focusing on Spanish tapas? I'd really enjoy learning about the various traditional Spanish small plates.
+- id: T74
+  text: I can't find the option to cancel my free trial. I've looked everywhere in the settings. I don't want to be charged tomorrow.
+- id: T75
+  text: Hey, the 'Step-by-step' mode keeps skipping step 3 in the Mushroom Risotto recipe. It jumps straight to adding the stock.
+- id: T76
+  text: Could you please add more vegan dessert options? The current selection is quite limited.
+constraints_shown_to_student:
+- Classify each ticket as Urgent or Routine based on its content
+- 'For Urgent tickets only, output one markdown bullet: ticket ID, one-sentence issue summary (under 20 words), and a suggested next action'
+- Routine tickets are not shown individually, only counted
+- 'End with exactly one line: ''X of 76 tickets required urgent action.'' where X equals the number of bullets above'
+- 'No other text: only the bullets and the final count line'
+ground_truth:
+  urgent_ids_definite:
+  - T1
+  - T12
+  - T23
+  - T27
+  - T29
+  - T36
+  - T37
+  - T38
+  - T44
+  - T47
+  - T49
+  - T50
+  - T54
+  - T55
+  - T60
+  - T71
+  - T74
+grading_weights:
+  classification_accuracy: 0.6
+  format_compliance: 0.2
+  count_matches_own_list: 0.2
+trials: 1
